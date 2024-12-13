@@ -4,29 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
     <title>Artopia</title>
+    <style>
+      .nav {
+        background-color: hsl(271, 100%, 50%);
+      }
+
+      #navbarScroll {
+        position: fixed;
+        top: 0;
+        background: linear-gradient(to right, #a855f7, #000000, #000000);
+        width: 100%;
+        color: white;
+        z-index: 1000;
+      }
+    </style>
   </head>
   <body>
     <header
       class="bg-black text-white h-screen bg-gradient-to-r from-purple-500 via-black to-black"
     >
-      <div id="navbar" class="text-white flex justify-between py-5 px-16">
-        <div>
-          <h1 class="font-bold text-[23px]">Artopia</h1>
-        </div>
-        <nav class="flex justify-center text-center">
-          <p class="mr-10"><a href="/">Discover</a></p>
-          <p class="mr-10"><a href="/">Forum</a></p>
-          <p class="mr-10"><a href="/">News</a></p>
-          <p class="mr-10"><a href="/">Blog</a></p>
-        </nav>
-        <div>
-          <p
-            class="bg-purple-500 px-10 py-2 rounded-sm text-[12px] hover:bg-gray-600 cursor-pointer"
-          >
-            <a href="/">Log In</a>
-          </p>
+      <div id="navbarScroll" class="z-50">
+        <div id="navbar" class="text-white flex justify-between py-5 px-16">
+          <div>
+            <h1 class="font-bold text-[23px]">Artopia</h1>
+          </div>
+          <nav class="flex justify-center text-center">
+            <p class="mr-10"><a href="/">Discover</a></p>
+            <p class="mr-10"><a href="/">Forum</a></p>
+            <p class="mr-10"><a href="/">News</a></p>
+            <p class="mr-10"><a href="/">Blog</a></p>
+          </nav>
+          <div>
+            <a href="signin.html">
+            <p
+              class="bg-purple-500 px-10 py-2 rounded-sm text-[12px] hover:bg-gray-600 cursor-pointer"
+            >
+              Log In
+            </p>
+          </a>
+          </div>
         </div>
       </div>
 
@@ -87,11 +104,13 @@
             class="flex items-center border-2 border-purple-700 rounded-sm px-8 hover:bg-purple-900 hover:cursor-pointer hover:font-semibold"
           >
             <img src="media/RocketLaunch.svg" alt="" />
-            <span class="pl-3">View Ranking</span>
+            <a href="/"><span class="pl-3">View Ranking</span></a>
           </div>
         </div>
 
-        <div class="grid grid-cols-4 mt-[50px] gap-8">
+        <div
+          class="grid grid-cols-4 mt-[50px] gap-8 sm:grid-cols-2 md:grid-cols-3 max-w-[675px]:grid-cols-1 lg:grid-cols-4"
+        >
           <div
             class="bg-gray-800 rounded-xl flex justify-center py-[120px] relative hover:scale-100 scale-95 transition duration-300 cursor-pointer"
           >
@@ -672,7 +691,7 @@
           </div>
 
           <div
-            class="rounded-2xl mr-[-70px] hover:scale-105 transition duration-300 cursor-pointer hover:contrast-150"
+            class="rounded-2xl mr-[-70px] hover:scale-105 transition duration-300 cursor-pointer hover:contrast-150 z-10"
           >
             <img
               src="media/Vectorcat2 6.svg"
@@ -682,7 +701,7 @@
           </div>
 
           <div
-            class="mr-[-160px] rounded-2xl hover:scale-105 transition duration-300 cursor-pointer hover:contrast-150"
+            class="mr-[-160px] rounded-2xl hover:scale-105 transition duration-300 cursor-pointer hover:contrast-150 z-20"
           >
             <img
               src="media/Vectorcat3 7.svg"
@@ -976,6 +995,36 @@
       </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+    const newsletter = document.getElementById("newsletter");
+      const newsletterBtn = document.getElementById("newsletterBtn");
+      
+      newsletterBtn.addEventListener("click", () => {
+        if (
+          newsletter.value.includes("@") &&
+          newsletter.value.includes("gmail.com")
+        ) {
+          newsletter.value = " ";
+        } else {
+          alert("Both '@' & '.com' are required");
+        }
+      });
+      
+      const footerEmailIcon = document.getElementById("footerEmailIcon");
+      const footerEmail = document.getElementById("footerEmail");
+      
+      footerEmailIcon.addEventListener("click", () => {
+        if (
+          footerEmail.value.includes("@") &&
+          footerEmail.value.includes("gmail.com")
+        ) {
+          footerEmail.value = " ";
+        } else {
+          alert("Both '@' & '.com' are required");
+        }
+      });
+      
+      
+      </script>
   </body>
 </html>

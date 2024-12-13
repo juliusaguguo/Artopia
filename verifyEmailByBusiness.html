@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>verify your email</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-[url('media/c9f01cf18f678e804c5ba1cde4aadf79.jpg')] bg-cover bg-center h-screen object-cover flex justify-center items-center"
+  >
+     <div class="bg-white w-[600px] h-[500px] rounded-xl flex justify-center items-center text-center">
+        <div>
+            <div class="flex justify-center items-center">
+            <img src="media/ri_mail-unread-fill.svg" alt="">
+        </div>
+            <div  class="font-semibold text-[25px] text-center mt-[30px]">
+                <h1>Verify by Mail</h1>
+            </div>
+            <div class="mt-[30px] font-semibold text-gray-900">
+                <p>Please check your mail and follow the instruction to activate your <br>
+                    account. If you did not receive the mail , or it has expired,you can resend <br>
+                another one</p>
+            </div>
+            <div>
+                <button class="bg-purple-600 text-center text-white w-full py-[15px] rounded-md font-semibold mt-[30px]">
+                    Resend my Verification email!
+                </button>
+                <br>
+                <button class="font-semibold mt-[20px] mb-[40px]" id="changeMail">
+                    Click here to change your email
+                </button>
+            </div>
+        </div>
+     </div>
+
+
+     <script>
+        document.getElementById("changeMail").addEventListener("click", (event) => {
+            event.preventDefault();
+
+            window.location.href = "registerBusiness.html"
+        })
+     </script>
+  </body>
+</html>
